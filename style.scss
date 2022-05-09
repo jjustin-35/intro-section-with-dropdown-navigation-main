@@ -42,7 +42,7 @@ nav{
                 a{
                     text-decoration: none;
                     color: black;
-                    padding: 1rem;
+                    padding: 0.5rem 1rem;
                     border: 1.5px solid $AlmostWhite;
                     border-radius: 10px;
                     transition: all 0.25s ease;
@@ -97,6 +97,7 @@ main{
         &.content{
             flex-direction: column;
             justify-content: center;
+            position: relative;
             h1{
                 font-size: 80px;
                 &.mobileH1{
@@ -113,7 +114,7 @@ main{
                 border-radius: 10px;
                 background-color: $AlmostWhite;
                 font-weight: 700;
-                margin: 2rem 0;
+                margin-bottom: 3rem;
                 padding: 1rem;
                 align-self: flex-start;
                 font-size: 20px;
@@ -122,6 +123,17 @@ main{
                 &:hover{
                     background-color: black;
                     color: white;
+                }
+            }
+            div.mark{
+                width: 75%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: absolute;
+                bottom: 0;
+                img{
+                    width: 20%;
                 }
             }
         }
@@ -171,6 +183,7 @@ main{
                 }
             }
             &.content{
+                align-items: center;
                 h1{
                     &.desktopH1{
                         display: none;
@@ -191,10 +204,18 @@ main{
                     align-self: center;
                     background-color: black;
                     color: white;
+                    margin-top: 2rem;
                     transition: all 0.25s ease;
                     &:hover{
                         background-color: $AlmostWhite;
                         color: black;
+                    }
+                }
+                div.mark{
+                    position: static;
+                    width: 90%;
+                    img{
+                        width: 22%;
                     }
                 }
             }
