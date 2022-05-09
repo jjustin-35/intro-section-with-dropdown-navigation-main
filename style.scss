@@ -39,10 +39,14 @@ nav{
         &.burgerMenu{
             display: none;
         }
+        &.closeMenu{
+            display: none;
+        }
     }
     div{
         display: flex;
         justify-content: space-between;
+        transition: all 0.25s ease;
         ul{
             display: flex;
             list-style-type: none;
@@ -201,9 +205,6 @@ main{
 // mobile
 @media screen and (max-width: 500px) {
     nav{
-        div{
-            display: none;
-        }
         img{
             &.mobileLogo{
                 display: block;
@@ -212,7 +213,36 @@ main{
                 display: block;
                 cursor: pointer;
             }
+            &.closeMenu{
+                align-self: flex-end;
+                display: block;
+                cursor: pointer;
+            }
         }
+        div{
+            display: none;
+            &#menu{
+                img#logo{
+                    display: none;
+                }
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                position: fixed;
+                right: 0;
+                top: 0;
+                z-index: 5;
+                background-color: $AlmostWhite;
+                height: 100vh;
+                ul.option{
+                    flex-direction: column;
+                    li{
+                        margin: 0 1.5rem;
+                    }
+                }
+            }
+        }
+        
     }
     main{
         section{
