@@ -16,6 +16,18 @@ html, body{
     background-color: $AlmostWhite;
 }
 
+.dropdown{
+    background-color: white;
+    border-radius: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+}
+.show{
+    visibility: visible;
+    opacity: 1;
+}
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -57,28 +69,31 @@ nav{
                 &.subList{
                     flex-direction: column;
                     position: relative;
+                    z-index: 5;
                     ul.dropdown{
-                        background-color: white;
-                        border-radius: 10px;
                         flex-direction: column;
                         position: absolute;
                         top: 100%;
                         right: 1rem;
-                        visibility: hidden;
-                        opacity: 0;
-                        transition: all 0.3s ease-in;
                         li{
                             justify-content: flex-start;
                             a{
+                                font-size: 16px;
                                 display: flex;
                                 align-items: center;
                                 border: none;
-                                padding: 0.5rem 1.5rem;
+                                padding: 0.5rem 0.8rem;
                                 img{
                                     padding: 0;
                                     padding-right: 0.2rem;
                                 }
                             }
+                        }
+                    }
+                    &#company{
+                        ul.dropdown{
+                            right: 0;
+                            left: 1rem;
                         }
                     }
                 }
