@@ -229,19 +229,26 @@ main section.pic img.mobileImg {
   display: none;
 }
 
-@media screen and (max-width: 500px) {
-  nav div {
-    display: none;
-  }
-  nav img.mobileLogo {
-    display: block;
-  }
-  nav img.burgerMenu {
-    display: block;
-    cursor: pointer;
-  }
+@media screen and (max-width: 776px) {
   main {
     padding: 0;
+  }
+  main section.content {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main section.content div.mark {
+    position: static;
+    width: 90%;
+  }
+  main section.content div.mark img {
+    width: 22%;
+  }
+  main section.content button {
+    -ms-flex-item-align: auto;
+        -ms-grid-row-align: auto;
+        align-self: auto;
   }
   main section.pic {
     padding: 0;
@@ -252,6 +259,19 @@ main section.pic img.mobileImg {
   main section.pic img.mobileImg {
     display: block;
     width: 100vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  nav div {
+    display: none;
+  }
+  nav img.mobileLogo {
+    display: block;
+  }
+  nav img.burgerMenu {
+    display: block;
+    cursor: pointer;
   }
   main section.content {
     -webkit-box-align: center;
@@ -273,9 +293,6 @@ main section.pic img.mobileImg {
     text-align: center;
   }
   main section.content button {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
     background-color: black;
     color: white;
     margin-top: 2rem;
@@ -285,13 +302,6 @@ main section.pic img.mobileImg {
   main section.content button:hover {
     background-color: #fafafa;
     color: black;
-  }
-  main section.content div.mark {
-    position: static;
-    width: 90%;
-  }
-  main section.content div.mark img {
-    width: 22%;
   }
 }
 /*# sourceMappingURL=style.css.map */
