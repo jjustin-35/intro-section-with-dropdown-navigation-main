@@ -20,10 +20,19 @@
 </head>
 <body>
 <nav>
+  <img src="./images/logo.svg" alt="" class="mobileLogo">
   <div>
     <img src="./images/logo.svg" alt="snap">
     <ul class="option">
-      <li><a href="#">Features<img src="./images/icon-arrow-down.svg" alt="down"></a></li>
+      <li class="subList">
+        <a href="#">Features<img src="./images/icon-arrow-down.svg" alt="down"></a>
+        <ul class="dropdown">
+          <li><a href="#"><img src="./images/icon-todo.svg" alt="icon-todo">Todo List</a></li>
+          <li><a href="#"><img src="./images/icon-calendar.svg" alt="icon-calendar">Calender</a></li>
+          <li><a href="#"><img src="./images/icon-reminders.svg" alt="icon-reminders">Reminders</a></li>
+          <li><a href="#"><img src="./images/icon-planning.svg" alt="icon-planning">Planning</a></li>
+        </ul>
+      </li>
       <li><a href="#">Company<img src="./images/icon-arrow-down.svg" alt="down"></a></li>
       <li><a href="#">Careers</a></li>
       <li><a href="#">About</a></li>
@@ -35,12 +44,14 @@
       <li><a href="#" class="register">Register</a></li>
     </ul>
   </div>
+  <img src="./images/icon-menu.svg" alt="icon-menu" class="burgerMenu">
 </nav>
 <main>
   <section class="content">
-    <h1>
+    <h1 class="desktopH1">
       Make<br> remote work
     </h1>
+    <h1 class="mobileH1">Make remote work</h1>
     <p>
     Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.
     </p>
@@ -49,7 +60,8 @@
     </button>
   </section>
   <section class="pic">
-    <img src="./images/image-hero-desktop.png" alt="">
+    <img src="./images/image-hero-desktop.png" alt="" class="desktopImg">
+    <img src="./images/image-hero-mobile.png" alt="" class="mobileImg">
   </section>
 </main>
   

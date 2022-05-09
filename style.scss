@@ -12,11 +12,21 @@ p{
     font-size: $Pfontsize;
 }
 
+html, body{
+    background-color: $AlmostWhite;
+}
+
 nav{
     display: flex;
     justify-content: space-between;
     img{
         padding: 1rem;
+        &.mobileLogo{
+            display: none;
+        }
+        &.burgerMenu{
+            display: none;
+        }
     }
     div{
         display: flex;
@@ -32,16 +42,44 @@ nav{
                 a{
                     text-decoration: none;
                     color: black;
-                    padding: 1.2rem;
-                    border: 1.5px solid white;
+                    padding: 1rem;
+                    border: 1.5px solid $AlmostWhite;
                     border-radius: 10px;
                     transition: all 0.25s ease;
-                    &:hover{
+                    &.register{
                         border-color: black;
                     }
                     img{
                         padding: 0;
                         padding-left: 0.2rem;
+                    }
+                }
+                &.subList{
+                    flex-direction: column;
+                    position: relative;
+                    ul.dropdown{
+                        background-color: white;
+                        border-radius: 10px;
+                        flex-direction: column;
+                        position: absolute;
+                        top: 100%;
+                        right: 1rem;
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: all 0.3s ease-in;
+                        li{
+                            justify-content: flex-start;
+                            a{
+                                display: flex;
+                                align-items: center;
+                                border: none;
+                                padding: 0.5rem 1.5rem;
+                                img{
+                                    padding: 0;
+                                    padding-right: 0.2rem;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -50,6 +88,7 @@ nav{
 }
 main{
     display: flex;
+    flex-wrap: wrap-reverse;
     padding:2rem 4rem;
     section{
         padding: 1rem;
@@ -60,6 +99,9 @@ main{
             justify-content: center;
             h1{
                 font-size: 80px;
+                &.mobileH1{
+                    display: none;
+                }
             }
             p{
                 color: $MediumGray;
@@ -71,7 +113,7 @@ main{
                 border-radius: 10px;
                 background-color: $AlmostWhite;
                 font-weight: 700;
-                margin: 2.5rem 0;
+                margin: 2rem 0;
                 padding: 1rem;
                 align-self: flex-start;
                 font-size: 20px;
@@ -89,8 +131,73 @@ main{
             align-items: center;
             img{
                 width: 80%;
+                &.mobileImg{
+                    display: none;
+                }
             }
         }
     }
-        
+}
+
+// mobile
+@media screen and (max-width: 500px) {
+    nav{
+        div{
+            display: none;
+        }
+        img{
+            &.mobileLogo{
+                display: block;
+            }
+            &.burgerMenu{
+                display: block;
+                cursor: pointer;
+            }
+        }
+    }
+    main{
+        padding: 0;
+        section{
+            &.pic{
+                padding: 0;
+                img{
+                    &.desktopImg{
+                        display: none;
+                    }
+                    &.mobileImg{
+                        display: block;
+                        width: 100vw;
+                    }
+                }
+            }
+            &.content{
+                h1{
+                    &.desktopH1{
+                        display: none;
+                    }
+                    &.mobileH1{
+                        display: block;
+                        font-size: 40px;
+                        text-align: center;
+                        padding: 1rem 0;
+                    }
+                }
+                p{
+                    width: 100%;
+                    padding: 0;
+                    text-align: center;
+                }
+                button{
+                    align-self: center;
+                    background-color: black;
+                    color: white;
+                    transition: all 0.25s ease;
+                    &:hover{
+                        background-color: $AlmostWhite;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
 }
