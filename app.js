@@ -6,7 +6,7 @@ let subListElements = [features, company];
 subListElements.forEach(element => {
     element.addEventListener('click', () => {
         let dropdown = element.children[1];
-        if (window.outerWidth > 500) {
+        if (window.outerWidth > 646) {
             dropdown.classList.toggle('visibility');
         }
 
@@ -27,15 +27,18 @@ subListElements.forEach(element => {
 })
 
 let burger = document.querySelector('.burgerMenu');
-let blackBack = document.querySelector('.blackBack')
+let blackBack = document.querySelector('.blackBack');
 let menu = document.querySelector('#menu');
+let membership = document.querySelector('#membership');
 burger.addEventListener('click', () => {
     menu.classList.add('visibility');
+    membership.classList.add('visibility');
     blackBack.style = 'visibility: visible; opacity: 1;';
 })
 
 let closeMenu = document.querySelector('.closeMenu');
 closeMenu.addEventListener('click', () => {
     menu.classList.remove('visibility');
+    membership.classList.remove('visibility');
     blackBack.style = 'visibility: hidden; opacity: 0;';
 })
