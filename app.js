@@ -6,10 +6,13 @@ let subListElements = [features, company];
 subListElements.forEach(element => {
     element.addEventListener('click', () => {
         let dropdown = element.children[1];
+        if (window.innerWidth > 500) {
+            dropdown.classList.toggle('visibility');
+        }
+        
+
         let upArrow = element.querySelector('.upArrow');
         let downArrow = element.querySelector('.downArrow');
-
-        dropdown.classList.toggle('visibility');
 
         let arrows = [upArrow, downArrow];
         arrows.forEach(element => {
@@ -25,12 +28,15 @@ subListElements.forEach(element => {
 })
 
 let burger = document.querySelector('.burgerMenu');
+let blackBack = document.querySelector('.blackBack')
 let menu = document.querySelector('#menu');
 burger.addEventListener('click', () => {
-    menu.style.display = 'flex';
+    menu.classList.add('visibility');
+    blackBack.style = 'visibility: visible; opacity: 1;';
 })
 
 let closeMenu = document.querySelector('.closeMenu');
 closeMenu.addEventListener('click', () => {
-    menu.style.display = 'none';
+    menu.classList.remove('visibility');
+    blackBack.style = 'visibility: hidden; opacity: 0;';
 })
