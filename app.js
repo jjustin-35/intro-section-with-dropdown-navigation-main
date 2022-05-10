@@ -6,7 +6,21 @@ let subListElements = [features, company];
 subListElements.forEach(element => {
     element.addEventListener('click', () => {
         let dropdown = element.children[1];
-        dropdown.classList.toggle('show');
+        let upArrow = element.querySelector('.upArrow');
+        let downArrow = element.querySelector('.downArrow');
+
+        dropdown.classList.toggle('visibility');
+
+        let arrows = [upArrow, downArrow];
+        arrows.forEach(element => {
+            if (element.classList.contains('arrowShow') == true) {
+                element.classList.remove('arrowShow');
+                element.classList.add('arrowHide');
+            } else {
+                element.classList.remove('arrowHide');
+                element.classList.add('arrowShow');
+            }
+        });
     })
 })
 

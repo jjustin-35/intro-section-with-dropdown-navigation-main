@@ -21,9 +21,17 @@ html, body {
   transition: all 0.3s ease-in;
 }
 
-.show {
+.visibility {
   visibility: visible;
   opacity: 1;
+}
+
+.arrowShow {
+  display: inline-block;
+}
+
+.arrowHide {
+  display: none;
 }
 
 nav {
