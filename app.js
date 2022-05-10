@@ -6,10 +6,9 @@ let subListElements = [features, company];
 subListElements.forEach(element => {
     element.addEventListener('click', () => {
         let dropdown = element.children[1];
-        if (window.innerWidth > 500) {
+        if (window.outerWidth > 500) {
             dropdown.classList.toggle('visibility');
         }
-        
 
         let upArrow = element.querySelector('.upArrow');
         let downArrow = element.querySelector('.downArrow');
