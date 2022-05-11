@@ -3,10 +3,15 @@ let company = document.querySelector('#company');
 
 let subListElements = [features, company];
 
+let size = window.outerWidth;
+window.addEventListener('resize', () => {
+    size = window.outerWidth;
+})
+
 subListElements.forEach(element => {
     element.addEventListener('click', () => {
         let dropdown = element.children[1];
-        if (window.outerWidth > 646) {
+        if (size > 646) {
             dropdown.classList.toggle('visibility');
         }
 

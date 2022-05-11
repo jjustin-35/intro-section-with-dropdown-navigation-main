@@ -217,7 +217,8 @@ main section.content p {
 main section.content button {
   border: 1.5px solid black;
   border-radius: 10px;
-  background-color: #fafafa;
+  background-color: #141414;
+  color: #fafafa;
   font-weight: 700;
   margin-bottom: 3rem;
   padding: 1rem;
@@ -230,8 +231,8 @@ main section.content button {
 }
 
 main section.content button:hover {
-  background-color: black;
-  color: white;
+  background-color: #fafafa;
+  color: #141414;
 }
 
 main section.content div.mark {
@@ -405,15 +406,7 @@ main section.pic img.mobileImg {
     text-align: center;
   }
   main section.content button {
-    background-color: black;
-    color: white;
     margin-top: 2rem;
-    -webkit-transition: all 0.25s ease;
-    transition: all 0.25s ease;
-  }
-  main section.content button:hover {
-    background-color: #fafafa;
-    color: black;
   }
 }
 /*# sourceMappingURL=style.css.map */

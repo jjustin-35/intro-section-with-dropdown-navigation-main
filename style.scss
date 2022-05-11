@@ -149,7 +149,8 @@ main{
             button{
                 border: 1.5px solid black;
                 border-radius: 10px;
-                background-color: $AlmostWhite;
+                background-color: $AlmostBlack;
+                color: $AlmostWhite;
                 font-weight: 700;
                 margin-bottom: 3rem;
                 padding: 1rem;
@@ -158,8 +159,8 @@ main{
                 cursor: pointer;
                 transition: all 0.25s ease;
                 &:hover{
-                    background-color: black;
-                    color: white;
+                    background-color: $AlmostWhite;
+                    color: $AlmostBlack;
                 }
             }
             div.mark{
@@ -313,14 +314,7 @@ main{
                     text-align: center;
                 }
                 button{
-                    background-color: black;
-                    color: white;
                     margin-top: 2rem;
-                    transition: all 0.25s ease;
-                    &:hover{
-                        background-color: $AlmostWhite;
-                        color: black;
-                    }
                 }
             }
         }
