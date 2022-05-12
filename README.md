@@ -52,51 +52,131 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I learned that how to make the dropdown menu. I used the CSS to make the dropdown menu in desktop design. However, since the mobile design is different from desktop design, I took a lot of time to deal with the dropdown menu, and finally completed it by using JavaScript and Jquery.
 
-To see how you can add code snippets, see below:
+To see wha I made, see below:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<ul class="option">
+      <li class="subList" id="feature">
+        <a href="#">Features<img src="./images/icon-arrow-down.svg" alt="down" class="downArrow arrowShow"><img src="./images/icon-arrow-up.svg" alt="up" class="upArrow arrowHide"></a>
+        <ul class="dropdown">
+          <li><a href="#"><img src="./images/icon-todo.svg" alt="icon-todo">Todo List</a></li>
+          <li><a href="#"><img src="./images/icon-calendar.svg" alt="icon-calendar">Calender</a></li>
+          <li><a href="#"><img src="./images/icon-reminders.svg" alt="icon-reminders">Reminders</a></li>
+          <li><a href="#"><img src="./images/icon-planning.svg" alt="icon-planning">Planning</a></li>
+        </ul>
+      </li>
+      <li class="subList" id="company"><a href="#">Company<img src="./images/icon-arrow-down.svg" alt="down" class="downArrow arrowShow"><img src="./images/icon-arrow-up.svg" alt="up" class="upArrow arrowHide"></a>
+      <ul class="dropdown">
+        <li><a href="#">History</a></li>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+      </li>
+</ul>
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
+```scss
+ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.subList{
+            flex-direction: column;
+            position: relative;
+            z-index: 4;
+            ul.dropdown{
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 1rem;
+                  li{
+                    justify-content: flex-start;
+                    a{
+                        font-size: 16px;
+                        display: flex;
+                        align-items: center;
+                        border: none;
+                        padding: 0.5rem 0.8rem;
+                        img{
+                            padding: 0;
+                            padding-right: 0.2rem;
+                        }
+                    }
+                }
+            }
+            &#company{
+                ul.dropdown{
+                    right: 0;
+                    left: 1rem;
+                }
+            }
+        }
+    }
+  }
 ```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+let features = document.querySelector('#feature');
+let company = document.querySelector('#company');
+
+let subListElements = [features, company];
+
+subListElements.forEach(element => {
+    element.addEventListener('click', () => {
+        let dropdown = element.children[1];
+        if (size > 646) {
+            dropdown.classList.toggle('visibility');
+        }
+    })
+})
+
+// Jquery(mobile)
+let $feature = $('#feature');
+let $company = $("#company");
+let list = [$feature, $company];
+
+list.forEach((element) => {
+    element.on('click', function () {
+        if (size <= 646) {
+            element.children('.dropdown').slideToggle();
+        }
+    })
+})
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+Also, I learned how to make the site change its design when the window size is changing. When resizing, the content in the site should also change its design and function. I learned how to use the resize event to make it change the content when resizing.
+See below: 
+```js
+let size = window.outerWidth;
+window.addEventListener('resize', () => {
+    size = window.outerWidth;
+    if (size > 646) {
+        let blackBack = document.querySelector('.blackBack');
+        blackBack.style = 'visibility: hidden; opacity: 0;'
+    }
+})
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+subListElements.forEach(element => {
+    element.addEventListener('click', () => {
+        let dropdown = element.querySelector('.dropdown');
+        if (size > 646) {
+            dropdown.classList.toggle('visibility');
+        }
+    })
+})
+```
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [[基礎課程] jQuery 教學（一）：基礎觀念](https://summer10920.github.io/2020/04-23/jq-baseclass-1/#selector-%E9%81%B8%E5%8F%96) - This helped me to learn how to use the jQuery.
+- [純CSS的下拉式選單](https://www.astralweb.com.tw/pure-css-drop-down-menu/) - This helped me to design a dropdown menu with css without js. Although I still use js to the dropdown menu, this is still very helpful.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [Justin Chen](https://github.com/jjustin-35/)
+- Frontend Mentor - [@jjustin-35](https://www.frontendmentor.io/profile/jjustin-35)
+- Twitter - [@e\Vmd7EMdBkFjSEZz](https://twitter.com/Vmd7EMdBkFjSEZz)

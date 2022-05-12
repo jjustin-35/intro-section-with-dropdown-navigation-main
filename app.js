@@ -6,11 +6,15 @@ let subListElements = [features, company];
 let size = window.outerWidth;
 window.addEventListener('resize', () => {
     size = window.outerWidth;
+    if (size > 646) {
+        let blackBack = document.querySelector('.blackBack');
+        blackBack.style = 'visibility: hidden; opacity: 0;'
+    }
 })
 
 subListElements.forEach(element => {
     element.addEventListener('click', () => {
-        let dropdown = element.children[1];
+        let dropdown = element.querySelector('.dropdown');
         if (size > 646) {
             dropdown.classList.toggle('visibility');
         }
